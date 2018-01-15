@@ -1,0 +1,21 @@
+- @array_1 = foo
+%table.main-table.sibadiTable{:itemprop => "priemExam"}
+	%thead
+		%tr
+			%th Код
+			%th Направление подготовки (специальности)
+			%th Вступительные испытания (в порядке приоритета)
+			%th Минимальное количество баллов
+			%th Форма проведения вступительных испытаний, проводимых организацией самостоятельно
+	%tbody
+	-@array_1.each do |value|
+		%tr
+			%td{:colspan => "5", :style => "text-align: center"}
+				%p На места в рамках контрольных цифр приема граждан на обучение за счет бюджетных ассигнований по очной форме обучения по программам бакалавриата
+		%tr
+			%td #{value[0]}
+			%td #{value[1]}
+			%td{:itemprop => "priemExamList"} #{value[2]}
+			%td{:itemprop => "priemExamPoints"} #{value[3]}
+			%td{:itemprop => "priemExamForms"} #{value[4]}
+
